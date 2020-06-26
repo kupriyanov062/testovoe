@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\{type, product};
 
 class DatabaseSeeder extends Seeder
 {
@@ -9,8 +10,11 @@ class DatabaseSeeder extends Seeder
      *
      * @return void
      */
+    protected $type = ['Чехол', 'Стекло', 'Пленка', 'Кабель', 'Наушники'];
+
     public function run()
     {
-        // $this->call(UserSeeder::class);
+        $this->call(TypeSeeder::class);
+        $this->call(ProductSeeder::class);
     }
 }
